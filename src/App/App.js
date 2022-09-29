@@ -5,13 +5,11 @@ import styles from './styles.module.css'
 import { LocationSearch } from "../LocationSearch/LocationSearch";
 
 export const App = () => {
-  // const locationKey = '53759_PC';
   console.log(apiKey);
   const [weatherInfo, setWeatherInfo] = useState()
   const [locationKey, setLocationKey] = useState('');
   const [location, setLocation] = useState('');
 
-  // return weekday[this.getDay()];
   const padNum = (num) =>{
       const strNum = num + '';
       const strLen = strNum.length;
@@ -26,7 +24,6 @@ export const App = () => {
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     if(locationKey){
-      // we fetch the api here
         fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey=${locationKey}?apikey=${apiKey}&language=en-us`)
           .then(res => res.json())
           .then(res => {
@@ -44,9 +41,9 @@ export const App = () => {
     }
   }, [locationKey]);
 
-  useEffect(()=>{
-    console.log(weatherInfo)
-  }, [weatherInfo])
+  // useEffect(()=>{
+  //   console.log(weatherInfo)
+  // }, [weatherInfo])
 
   return (
     <div>

@@ -18,7 +18,6 @@ export const LocationSearch = ({onCityFound}) =>{
             //clear the search field after searching
             setZipCode('');
          });
-        // .then(res => console.log(res))
     }
     return(
         <div className={styles.main}>
